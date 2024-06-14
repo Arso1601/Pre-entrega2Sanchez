@@ -7,7 +7,6 @@ import ItemListContainer from './components/ProductsView/ItemListContainer';
 
 import ItemDetailContainer from './components/ProductsView/ItemDetailContainer';
 
-import Contacto from "./components/Contacto";
  import Checkout from './components/CheckOut';
 
 import { CartProvider } from './context/CartContext';
