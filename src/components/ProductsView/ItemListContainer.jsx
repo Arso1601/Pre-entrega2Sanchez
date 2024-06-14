@@ -1,8 +1,6 @@
-
-import './ItemListContainer.css';
 import { useEffect, useState } from 'react';
 import { getProducts } from '../../asyncMock';
-import ProductCard from './ProductCard';
+import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
 export default function ItemListContainer() {
@@ -23,20 +21,7 @@ export default function ItemListContainer() {
 
   return (
     <>
-      <div class="container">
-        <h1>{category}</h1>
-        <article class="flex-container card-item">
-          {products.map((product) => (
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              image={product.image}
-              idProd={product.id}
-              category={product.category}
-            />
-          ))}
-        </article>
-      </div>
+       <ItemList products={products} category={category} />
     </>
   );
 }
