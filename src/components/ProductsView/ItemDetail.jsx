@@ -4,18 +4,15 @@ import { getProduct } from '../../asyncMock';
 import { useEffect, useState } from 'react';
 import ItemCount from './ItemCount';
 
-export default function SingleProd() {
-  const [product, setProduct] = useState({});
-
-  const { prodId } = useParams();
-
-  useEffect(() => {
-    setProduct(getProduct(prodId));
-  }, []);
+const ItemDetail = ({ product }) => {
+    
+  
+    
+  
+    
 
   return (
-    <>
-      <div class="container">
+    <div class="container">
         <h1>{product.category}</h1>
         <div class="product-container">
           <div class="product-image">
@@ -31,6 +28,10 @@ export default function SingleProd() {
           </div>
         </div>
       </div>
-    </>
   );
 }
+
+export default ItemDetail
+
+
+
