@@ -1,22 +1,18 @@
-import { useForm } from "react-hook-form";
+import React from 'react'
 
 const Contacto = () => {
 
-    const { register, handleSubmit } = useForm();
-
-    const enviar = (data) => {
-        console.log(data);
-    }
+    
 
   return (
 
-    <div className="container">
+    <div class="container">
         <h1 >Contacto</h1>
-        <form className="formulario" onSubmit={handleSubmit(enviar)}>
+        <form class="formulario" >
 
-            <input type="text" placeholder="Ingresá tu nombre" {...register("nombre")} />
-            <input type="email" placeholder="Ingresá tu e-mail" {...register("email")} />
-            <input type="phone" placeholder="Ingresá tu teléfono" {...register("telefono")} />
+            <input type="text" placeholder="Ingresá tu nombre"  />
+            <input type="email" placeholder="Ingresá tu e-mail"  />
+            <input type="phone" placeholder="Ingresá tu teléfono"  />
 
             <button className="enviar" type="submit">Enviar</button>
 

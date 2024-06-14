@@ -27,11 +27,6 @@ export default function NavComponent() {
                                 <Link to={'/products/Pokemon'} class="btn btn-outline-warning">Pokemon</Link>
                             </button>
                         </li>
-                        <li class="nav-item ">
-                            <button class="nav-link">
-                                <Link to={'/contacto'} class="btn btn-outline-warning">Contacto</Link>
-                            </button>
-                        </li>
                     </ul>
                     <form class="d-flex mx-auto">
                         <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Busqueda"></input>

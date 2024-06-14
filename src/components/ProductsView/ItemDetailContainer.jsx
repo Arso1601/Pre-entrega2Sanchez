@@ -4,14 +4,24 @@ import { getProduct } from '../../asyncMock';
 import { useEffect, useState } from 'react';
 import ItemCount from './ItemCount';
 
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
+
 export default function SingleProd() {
   const [product, setProduct] = useState({});
 
   const { prodId } = useParams();
 
   useEffect(() => {
-    setProduct(getProduct(prodId));
-  }, []);
+    const docRef = doc(db, "productos", prodId);
+    getDoc(docRef)
+      .then((resp) => {
+        setProduct(
+          { ...resp.data(), prodId: resp.prodId }
+        );
+      })
+
+  },  [prodId]);
 
   return (
     <>

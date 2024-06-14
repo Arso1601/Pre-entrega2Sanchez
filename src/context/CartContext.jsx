@@ -16,7 +16,7 @@ export const CartProvider = ({ children }) => {
         const estaEnElCarrito = nuevoCarrito.find((producto) => producto.id === itemAgregado.id);
 
         if (estaEnElCarrito) {
-            estaEnElCarrito.cantidad= estaEnElCarrito.cantidad <= producto.cantidad && estaEnElCarrito.cantidad + cantidad;
+            estaEnElCarrito.cantidad= estaEnElCarrito.cantidad = estaEnElCarrito.cantidad + cantidad;
 
         } else {
             nuevoCarrito.push(itemAgregado);
