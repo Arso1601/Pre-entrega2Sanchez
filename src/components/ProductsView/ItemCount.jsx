@@ -1,21 +1,9 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 
-const ItemCount = ({ item }) => {
+const ItemCount = ( {cantidad, handleRestar, handleSumar, handleAgregar} ) => {
 
-    const {carrito, agregarAlCarrito} = useContext(CartContext);
-     
-
-    const [cantidad, setCantidad] = useState(1);
-
-    const handleRestar = () => {
-        cantidad > 1 && setCantidad(cantidad - 1)
-    }
-
-    const handleSumar = () => {
-        cantidad < item.cantidad && setCantidad(cantidad + 1)
-    }
-
+   
    
     return (
 
@@ -27,7 +15,7 @@ const ItemCount = ({ item }) => {
                 <div class="item"><button type="button" class="btn btn-outline-secondary" onClick={handleSumar}>+</button>
                 </div>
             </div>
-            <button type="button" class="btn btn-warning" onClick={() => {agregarAlCarrito(item, cantidad)}}>Agregar al carrito</button>
+            <button type="button" class="btn btn-warning" onClick={handleAgregar}>Agregar al carrito</button>
 
 
 
