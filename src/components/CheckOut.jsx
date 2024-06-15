@@ -49,15 +49,15 @@ const Checkout = () => {
         <form className="formulario" onSubmit={handleSubmit(comprar)}>
         <div class="form-group">
         <label for="exampleInputEmail1">Ingresar Nombre:</label>
-            <input type="text"  class="form-control" placeholder="Ingresá tu nombre" {...register("nombre")} />
+            <input type="text"  class="form-control" placeholder="Ingresa tu nombre" {...register("nombre")} />
             </div>
             <div class="form-group">
         <label for="exampleInputEmail1">Ingresar Correo:</label>
-            <input type="email"  class="form-control" placeholder="Ingresá tu e-mail" {...register("email")} />
+            <input type="email"  class="form-control" placeholder="Ingresa tu e-mail" {...register("email")} />
             </div>
             <div class="form-group">
         <label for="exampleInputEmail1">Confirmar Correo:</label>
-            <input type="email"  class="form-control" placeholder="Ingresá tu teléfono" {...register("telefono")} />
+            <input type="email"  class="form-control" placeholder="Ingresa tu teléfono" {...register("telefono")} />
             </div>
             <>
             <button  class="button-compra btn btn-outline-danger " type="submit">Comprar</button>
