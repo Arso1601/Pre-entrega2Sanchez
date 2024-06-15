@@ -23,9 +23,18 @@ const ItemDetailContainer = () => {
 
     }, [id]);
 
+    const [isLoading, setIsLoading] = useState(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
   return (
     <>
-     {product &&<ItemDetail product={product} />}
+     {isLoading ?<div class="spinner">
+      <div class="dot1"></div>
+       <div class="dot2"></div>
+</div>: <ItemDetail product={product} />}
     </>
   );
 }

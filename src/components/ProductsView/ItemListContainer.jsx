@@ -1,4 +1,4 @@
-
+import './Spinner.css';
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
@@ -26,15 +26,17 @@ export default function ItemListContainer() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+  }, 1000);
 
 
   return (
     <>
-    {isLoading ?<h2>Cargando</h2>:
-       <ItemList products={products} category={category} />}
+    {isLoading ?<div class="spinner">
+      <div class="dot1"></div>
+       <div class="dot2"></div>
+</div>:<ItemList products={products} category={category} />}
     </>
   );
 }

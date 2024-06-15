@@ -2,6 +2,7 @@ import './Navigation/Button.css';
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../components/firebase/config';
 
@@ -36,6 +37,7 @@ const Checkout = () => {
                 <h1 className="main-title">Muchas gracias por tu compra</h1>
                 <p>Tu número de pedido es: {pedidoId}</p>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDKDkIY2e1cA2fjdP-biza1aFwqt4bHupFHA&s"  />
+                <Link to='/'><button type="button" class="button-compra btn btn-warning">Continuar comprando</button></Link>
             </div>
         )
     }
