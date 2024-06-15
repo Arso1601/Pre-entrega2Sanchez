@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-import { getProducts } from '../../asyncMock';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -25,9 +24,17 @@ export default function ItemListContainer() {
         })
   }, [category]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+
   return (
     <>
-       <ItemList products={products} category={category} />
+    {isLoading ?<h2>Cargando</h2>:
+       <ItemList products={products} category={category} />}
     </>
   );
 }
